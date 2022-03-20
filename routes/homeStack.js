@@ -13,6 +13,9 @@ const screens = {
   },
   Tapper: {
     screen: Tapper,
+    navigationOptions: {
+      headerShown: false,
+    },
   },
 };
 

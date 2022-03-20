@@ -8,7 +8,7 @@ const Tapper = (props) => {
   const { title = "Tap This" } = props;
 
   return (
-    <Pressable style={styles.container} onPress={() => setTapped(tapped + 1)}>
+    <Pressable style={styles.container} onPress={() => setTapped(1)}>
       <Text style={styles.text}>{title}</Text>
       <Text style={styles.text}>{tapped}</Text>
     </Pressable>
