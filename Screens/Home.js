@@ -1,20 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import { StyleSheet, Text, Pressable } from "react-native";
 import { colors } from "../constants/color";
+import * as Speech from "expo-speech";
 
 const Home = (props) => {
+  
   const pressHandler = () => {
-    props.navigation.navigate("Tapper");
+    const TTS = "This app is built for blind people";
+    Speech.isSpeakingAsync().then((speaking) => {
+      if (!speaking) {
+        Speech.speak(TTS, {
+          onDone: () => props.navigation.navigate("Tapper"),
+        });
+      }
+    });
   };
 
   return (
-    <Pressable
-      style={styles.container}
-      onPress={() => {
-        pressHandler();
-      }}
-    >
-      <Text style={styles.text}>Output Sounds Here</Text>
+    <Pressable style={styles.container} onPress={pressHandler}>
+      <Text style={styles.text}>Home Screen</Text>
     </Pressable>
   );
 };

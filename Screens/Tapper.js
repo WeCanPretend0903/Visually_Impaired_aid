@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { StyleSheet, View, Text, Pressable, Button } from "react-native";
 import { colors } from "../constants/color";
+import * as Speech from "expo-speech";
 
 const Tapper = (props) => {
   const [tapped, setTapped] = useState(0);

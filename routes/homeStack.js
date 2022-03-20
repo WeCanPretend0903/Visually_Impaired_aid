@@ -19,4 +19,3 @@ const screens = {
 const homeStack = createStackNavigator(screens);
 
 export default createAppContainer(homeStack);
-// export by default the top of the stack.
